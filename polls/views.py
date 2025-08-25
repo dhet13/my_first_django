@@ -11,6 +11,12 @@ def index(request):
     }
     return render(request, 'polls/index.html', context)
 
+def template_test(request):
+    return render(request, 'polls/template_test.html')
+
+def demo_index(request):
+    return render(request, 'polls/demo_index.html')
+
 
 def hello(request):
     return HttpResponse ("안녕하세요")
