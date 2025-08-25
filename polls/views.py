@@ -1,5 +1,16 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 from .models import Memo
+
+def index(request):
+    memos = Memo.objects.all()
+    context = {
+        'name': '홍길동',
+        'context': '장고 템플릿 연습',
+        'memos': memos
+    }
+    return render(request, 'polls/index.html', context)
+
 
 def hello(request):
     return HttpResponse ("안녕하세요")

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>장고 템플릿 연습</h1>
+    <p>안녕하세요, {{name}}님!</p>
+    <p>{{context}}</p>
+    
+    {# 메모가 있으면, for문을 진행 #}
+    {% if memos %}
+        <h2>메모 목록</h2>
+        <ul>
+        {% for memo in memos %}
+            <li><strong>{{memo.id}}. {{memo.title}}</strong> - {{memo.content|truncatewords:10}}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>등록된 메모가 없습니다.</p>
+    {% endif %}
+</body>
+</html>

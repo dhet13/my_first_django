@@ -6,5 +6,6 @@ urlpatterns = [
     path('good/', views.good),
     path('debug/', views.debug_request),
     path('memo/', views.memo_list, name='memo_list'),
-    path('memo/stats/', views.memo_stats, name='memo_stats')
+    path('memo/stats/', views.memo_stats, name='memo_stats'),
+    path("", views.index, name='index')
 ]
