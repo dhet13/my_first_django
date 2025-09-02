@@ -16,24 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-<<<<<<< HEAD
 from django.conf import settings
 from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('polls.urls')),
-    path('accounts/',include('accounts.urls')),
-    path('photo/',include('photo_gallery.urls')),
+    path('polls/', include('polls.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('photo/', include('photo_gallery.urls')),
 ]
 # 우리들의서버주소/polls
 
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL
-                            ,document_root=settings.MEDIA_ROOT)
-=======
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('polls/', include('polls.urls'))
-]
->>>>>>> d08acb3d802c4d43e517fb5a0c8d9db6c115538e
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
