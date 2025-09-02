@@ -1,5 +1,4 @@
 from django.urls import path
-<<<<<<< HEAD
 # from . import views
 # 원하는 뷰를 가져오는 형태
 from .views import lion, dubug_request, memo_list, memo_detail, index,memo_create,test1,test2
@@ -22,22 +21,10 @@ urlpatterns = [
     path('test2/',test2,name='test2'),
     path('memo/update/<int:pk>/', views.memo_update, name='memo_update'),
     path('memo/delete/<int:pk>/', views.memo_delete, name='memo_delete'),
-    path('memo/search/', views.memo_search, name="memo_search")
+    path('memo/search', views.memo_search, name='memo_search')
     # path('tiger/<str:name>/', lion),
     # path('', index),
     # path('bad/', blog_list),
     # 127.0.0.1/dubug/  => path('dubug/', dubug_request)
 ]
 # url이 어떻게 뷰로 연결되는지 원리를 이해.
-=======
-from . import views
-
-urlpatterns = [
-    path('hello/', views.hello),
-    path('good/', views.good),
-    path('debug/', views.debug_request),
-    path('memo/', views.memo_list, name='memo_list'),
-    path('memo/stats/', views.memo_stats, name='memo_stats'),
-    path("", views.index, name='index')
-]
->>>>>>> d08acb3d802c4d43e517fb5a0c8d9db6c115538e
