@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-from tabnanny import verbose
-from turtle import title
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 """
@@ -16,14 +14,15 @@ CREATE TABLE customers (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 """
+
 class Article(models.Model):
-    title = models.CharField('이게요렇게나옵니다',max_length=200)
+    title = models.CharField('제목', max_length=200)
     content = models.TextField("content")
     created_at = models.DateTimeField('작성일', auto_now_add=True)
     updated_at = models.DateTimeField('수정일', auto_now=True)
 
     def __str__(self):
-        return "__str__통해서이렇게나옵니다"+ self.title
+        return self.title
 
     class Meta:
         verbose_name = "아티클"
@@ -34,7 +33,6 @@ class Article(models.Model):
 # 실제 DB에 반영 : python manage.py migrate
 
 # 여러분의 DB에 테이블을 생성해 보겠습니다!
-from django.contrib.auth.models import User
 
 # author 추가
 # 디버그에서 view에 index에서 브레이크 포인트로 멈추기
@@ -50,35 +48,12 @@ class Memo(models.Model):
         verbose_name='작성자'
     )
     title = models.CharField('제목', max_length=100)
-=======
-from django.db import models
-
-# Create your models here.
-
-class Article(models.Model):
-    title = models.CharField("제목", max_length=200)
-    content = models.TextField("콘텐츠")
-    created_at = models.DateField("작성일", auto_now_add=True)
-    updated_at = models.DateField("수정일", auto_now_add=True)
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name = '게시글'
-        verbose_name_plural = '게시글 목록'
-
-class Memo(models.Model):
-    title = models.CharField('제목', max_length = 100)
->>>>>>> d08acb3d802c4d43e517fb5a0c8d9db6c115538e
     content = models.TextField('내용')
     is_important = models.BooleanField('중요', default=False)
     created_at = models.DateTimeField('생성일', auto_now_add=True)
 
     def __str__(self):
         return self.title
-<<<<<<< HEAD
-
     class Meta:
         verbose_name = '메모'
         verbose_name_plural = '메모 목록'
@@ -87,12 +62,4 @@ class Memo(models.Model):
 # -> Admin 페이지 등록
 # 2시 50분까지
 
-
 # 3시 부터는 뷰를 같이 만들어 보기기
-=======
-    
-    class Meta:
-        verbose_name = '메모'
-        verbose_name_plural = '메모 목록'
-        ordering = ['-created_at']
->>>>>>> d08acb3d802c4d43e517fb5a0c8d9db6c115538e
