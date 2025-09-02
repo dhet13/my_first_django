@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Article, Memo
 
+<<<<<<< HEAD
 # Register your models here.
 # @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
@@ -22,10 +23,21 @@ admin.site.register(Article, ArticleAdmin)
 
 # DB초기화 
 # sqlite파일 삭제, migrations 내부 파일 삭제(__init__.py는 있어야합니다!!)
+=======
+@admin.register(Article)
+class AritcleAdmin(admin.ModelAdmin):
+    list_display = ['title', 'created_at', 'updated_at']
+    search_fields = ['title', 'content']
+    list_filter = ['created_at']
+>>>>>>> d08acb3d802c4d43e517fb5a0c8d9db6c115538e
 
 @admin.register(Memo)
 class MemoAdmin(admin.ModelAdmin):
     list_display = ['title', 'is_important', 'created_at']
     list_filter = ['is_important', 'created_at']
     search_fields = ['title', 'content']
+<<<<<<< HEAD
     list_editable = ['is_important']  # 목록에서 바로 수정 가능!
+=======
+    list_editable = ['is_important']
+>>>>>>> d08acb3d802c4d43e517fb5a0c8d9db6c115538e

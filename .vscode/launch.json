@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+<<<<<<< HEAD
         {
             "name": "Python Debugger: Django",
             "type": "debugpy",
@@ -15,6 +16,9 @@
             "autoStartBrowser": false,
             "program": "${workspaceFolder}\\manage.py"
         },
+=======
+        
+>>>>>>> d08acb3d802c4d43e517fb5a0c8d9db6c115538e
         {
             "name": "Python Debugger: Django",
             "type": "debugpy",

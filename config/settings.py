@@ -11,9 +11,14 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+<<<<<<< HEAD
 from dotenv import load_dotenv
 import os
 load_dotenv()
+=======
+import os
+
+>>>>>>> d08acb3d802c4d43e517fb5a0c8d9db6c115538e
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -22,12 +27,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG") =="True"
 
 ALLOWED_HOSTS = ['*']
+=======
+SECRET_KEY = 'django-insecure-your-secret-key-here-for-development-only'
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+ALLOWED_HOSTS = []
+>>>>>>> d08acb3d802c4d43e517fb5a0c8d9db6c115538e
 
 
 # Application definition
@@ -39,9 +53,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     "polls",
     'accounts',
     "photo_gallery",
+=======
+    'polls',
+>>>>>>> d08acb3d802c4d43e517fb5a0c8d9db6c115538e
 ]
 
 MIDDLEWARE = [
@@ -56,6 +74,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'config.urls'
 
+<<<<<<< HEAD
 # 1. 프로젝트 루트에 templates 라는 폴더 생성
 # 2. templates폴더에 common 이라는 폴더 생성해서 이 안에 base.html을 이동
 # 3. settings.py에 추가 ->  'DIRS': [BASE_DIR / 'templates']
@@ -66,6 +85,12 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [BASE_DIR / 'my_templates'],
+=======
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+>>>>>>> d08acb3d802c4d43e517fb5a0c8d9db6c115538e
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -84,6 +109,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
+<<<<<<< HEAD
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': BASE_DIR / 'db.sqlite3',
@@ -96,11 +122,19 @@ DATABASES = {
         'PASSWORD': os.getenv("PASSWORD"),
         'HOST': os.getenv("HOST"),
         'PORT': os.getenv("PORT"),
+=======
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+>>>>>>> d08acb3d802c4d43e517fb5a0c8d9db6c115538e
     }
 }
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d08acb3d802c4d43e517fb5a0c8d9db6c115538e
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
@@ -136,14 +170,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+<<<<<<< HEAD
 # STATICFILES_DIRS = [
 #     BASE_DIR / 'my_static',
 # ]
+=======
+>>>>>>> d08acb3d802c4d43e517fb5a0c8d9db6c115538e
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+<<<<<<< HEAD
 
 LOGIN_URL='/accounts/login/'
 LOGIN_REDIRECT_URL='/'
@@ -175,3 +213,5 @@ common_val=99999
 # 11. main에서 dev2 브랜치를 머지(git merge dev2)
 # 12. vscode 화면에서 코드를 확인하고 남길 내용 남기고 <<<< ==== >>>> 삭제 -> 저장
 # 13. 커밋 푸시
+=======
+>>>>>>> d08acb3d802c4d43e517fb5a0c8d9db6c115538e
